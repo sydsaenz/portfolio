@@ -3,4 +3,122 @@ body {
        and use the OS’s UI font as the website font
      */
     font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin-inline: max(1em, (100% - 100ch) / 2);
+    background-color: #f9f9f9;
    }
+
+nav {
+  display: flex;
+  }
+
+a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+
+a.current {
+  border-bottom-width: 0.4em;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+
+:root {
+  --color-accent: oklch(37.47% 0.1278 144.42);
+  accent-color: var(--color-accent);
+}
+
+a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  text-decoration: none; 
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+/* form label,
+form input,
+form textarea,
+form button {
+  font: inherit;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-block: 8px;
+} */
+
+form {
+  font: inherit;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+form label {
+  font: inherit;
+  display: grid;
+  grid-template-columns: subgrid; 
+  grid-column: 1 / -1;
+}
+
+form button {
+  justify-content: center; 
+  align-items: center;    
+  text-align: right;
+  font: inherit;
+  display: flex;
+  grid-template-columns: subgrid; 
+  grid-column: 1 / -1;
+}
+
+img {
+  max-width: 100%;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+}
+
+article {
+  font: inherit;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  padding: 0.5em;
+}
+
+h2 {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 4rem; 
+}
+
+main {
+  margin: 2em auto;
+  background: white; 
+  padding: 2em;
+  border-radius: 10px; 
+  border-style: solid;
+  border-color: oklch(80% 3% 200);
+}
+
+section h2 {
+  color: oklch(37.47% 0.1278 144.42); 
+  border-bottom: 2px solid oklch(37.47% 0.1278 144.42);
+  padding-bottom: 0.1em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
